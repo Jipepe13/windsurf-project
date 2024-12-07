@@ -1,0 +1,203 @@
+:root {
+  /* Couleurs de base */
+  --primary-color: #2196f3;
+  --primary-dark: #1976d2;
+  --primary-light: #90caf9;
+  --secondary-color: #ff4081;
+  --secondary-dark: #c51162;
+  --secondary-light: #ff80ab;
+  
+  /* Couleurs de texte */
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-disabled: #999999;
+  
+  /* Couleurs de fond */
+  --background-primary: #ffffff;
+  --background-secondary: #f5f5f5;
+  --background-tertiary: #e0e0e0;
+  
+  /* Couleurs de bordure */
+  --border-color: #e0e0e0;
+  --border-focus: #2196f3;
+  
+  /* Couleurs d'état */
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --error-color: #f44336;
+  --info-color: #2196f3;
+  
+  /* Ombres */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Espacements */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Rayons de bordure */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s;
+  --transition-normal: 0.3s;
+  --transition-slow: 0.5s;
+  
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
+
+/* Thème sombre */
+[data-theme="dark"] {
+  /* Couleurs de texte */
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-disabled: #666666;
+  
+  /* Couleurs de fond */
+  --background-primary: #1e1e1e;
+  --background-secondary: #2d2d2d;
+  --background-tertiary: #404040;
+  
+  /* Couleurs de bordure */
+  --border-color: #404040;
+  
+  /* Ombres */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Contraste élevé */
+[data-contrast="high"] {
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  --text-disabled: #000000;
+  --background-primary: #ffffff;
+  --background-secondary: #ffffff;
+  --background-tertiary: #ffffff;
+  --border-color: #000000;
+  --primary-color: #000000;
+  --secondary-color: #000000;
+  --success-color: #006400;
+  --warning-color: #b35900;
+  --error-color: #cc0000;
+  --info-color: #000080;
+}
+
+[data-contrast="high"][data-theme="dark"] {
+  --text-primary: #ffffff;
+  --text-secondary: #ffffff;
+  --text-disabled: #ffffff;
+  --background-primary: #000000;
+  --background-secondary: #000000;
+  --background-tertiary: #000000;
+  --border-color: #ffffff;
+  --primary-color: #ffffff;
+  --secondary-color: #ffffff;
+  --success-color: #00ff00;
+  --warning-color: #ffaa00;
+  --error-color: #ff0000;
+  --info-color: #00ffff;
+}
+
+/* Tailles de police */
+[data-font-size="small"] {
+  font-size: 14px;
+}
+
+[data-font-size="medium"] {
+  font-size: 16px;
+}
+
+[data-font-size="large"] {
+  font-size: 18px;
+}
+
+/* Classes utilitaires */
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-disabled {
+  color: var(--text-disabled);
+}
+
+.bg-primary {
+  background-color: var(--background-primary);
+}
+
+.bg-secondary {
+  background-color: var(--background-secondary);
+}
+
+.bg-tertiary {
+  background-color: var(--background-tertiary);
+}
+
+.border {
+  border: 1px solid var(--border-color);
+}
+
+.shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-md {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.rounded-sm {
+  border-radius: var(--radius-sm);
+}
+
+.rounded-md {
+  border-radius: var(--radius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+.rounded-full {
+  border-radius: var(--radius-full);
+}
+
+.transition {
+  transition: all var(--transition-normal);
+}
+
+.transition-fast {
+  transition: all var(--transition-fast);
+}
+
+.transition-slow {
+  transition: all var(--transition-slow);
+}
+
+/* Désactiver les animations */
+[data-animations="false"] * {
+  transition: none !important;
+  animation: none !important;
+}
