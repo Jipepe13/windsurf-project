@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build-and-deploy:
@@ -16,18 +16,23 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+          cache: 'npm'
 
-      - name: Install Dependencies
+      - name: Install Frontend Dependencies
+        working-directory: ./
         run: npm ci
 
-      - name: Build
+      - name: Build Frontend
+        working-directory: ./
         run: npm run build
         env:
           REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
           REACT_APP_SOCKET_URL: ${{ secrets.REACT_APP_SOCKET_URL }}
+          PUBLIC_URL: "https://jipepe13.github.io/windsurf-project"
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: dist
+          clean: true
